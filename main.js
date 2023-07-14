@@ -25,8 +25,16 @@ function setup(){
   canvas =  createCanvas(700,600);
   canvas.parent('canvas');
 
+  video= createCapture(VIDEO);
+  video.size(650,500);
+  video.hide();
+  Image(video, 0, 0, 700,600);
+  poseNet = ml5.poseNet(video, modelLoaded);
 }
 
+function modelLoaded(){
+  console.log('Model Loaded!');
+}
 
 function draw(){
 
